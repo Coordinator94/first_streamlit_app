@@ -26,7 +26,7 @@ streamlit.dataframe(fruits_to_show)
 
 
 # Function for Fruitvice API Responses
-Def get_fruityvice_data(this_fruit_choice):
+def get_fruityvice_data(this_fruit_choice):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
@@ -44,7 +44,7 @@ try:
     streamlit.error()
     
 streamlit.header("The fruit load list contains:")
-Def get_fruit_load_list():
+def get_fruit_load_list():
      with my_cnx.curson() as my_cur:
           my_cur.execute("SELECT * From fruit_load_list")
           return my_cur.fetchall()
